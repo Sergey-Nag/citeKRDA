@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
+
+
+.screen {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.m-center {
+  margin: 0 auto;
+}
+
+.container {
+  width: 60%;
+}
+
+.b-top {
+  border-top: solid 2px white;
+}
+
+.main-screen {
+  height: 81vh;
+  background-color: #0b0b0b;
+  position: relative;
+}
+
+.main-screen::after {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 100%;
+  bottom: -30px;
+  background-color: #0b0b0b;
+}
+
+.main-logo {
+  display: block;
+  height: 50vh;
+}
+
+.info-screen {
+  background-color: #ffe000;
+}
+
+.wrapp-info {
+  padding: 60px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-block {
+  width: 40%;
+}
+
+.right-block {
+  width: 60%;
+}
+
+.toper-left {
+  position: absolute;
+  z-index: 100;
+  height: 1095px;
+}
+
+.text-wrapp h1,
+.text-wrapp h2 {
+  font-family: "Exo 2.0 Extra Bold", sans-serif;
+  color: #fff;
+  font-weight: 700;
+}
+
+.text-wrapp h1 {
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  font-size: 4.4em;
+  line-height: 1em;
+  margin-bottom: 30px;
+}
+
+.text-wrapp h2 {
+  font-size: 3.3em;
+}
+
+.text-wrapp p,
+.text-wrapp ul {
+  margin: 10px 0;
+  font-size: 1.5em;
+  font-family: 'Cera Pro Regular', sans-serif;
+}
+
+.text-wrapp.w {
+  color: #fff;
+}
+
+.text-wrapp ul {
+  font-size: 1.8em;
+  margin-left: 1.01em;
+}
+
+.footer-screen {
+  z-index: 10;
+  position: relative;
+  background-color: #0b0b0b;
+  padding-bottom: 50px;
+}
+
+.footer-screen::before {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 100%;
+  top: -30px;
+  background-color: #0b0b0b;
+}
+
+.socials {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  opacity: .9;
+  margin: 20px;
+  transition: all .15s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.icon img {
+  width: 35px;
+}

@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Exo 2.0 Extra Bold';
+  src: local("Exo 2.0 Extra Bold"), local("Exo 2.0");
+  src: url('../fonts/Exo20-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Exo20-ExtraBold.eot'),
+    url('../fonts/Exo20-ExtraBold.woff') format('woff'),
+    url('../fonts/Exo20-ExtraBold.ttf') format('truetype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cera Pro Regular';
+  src: local("Cera Pro Regular"), local("Cera Pro");
+    src: url('../fonts/CeraPro-Regular.eot'),
+    url('../fonts/CeraPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CeraPro-Regular.woff') format('woff'),
+    url('../fonts/CeraPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
