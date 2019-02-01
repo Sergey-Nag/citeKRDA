@@ -3,28 +3,51 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Document</title>
+  <meta name="theme-color" content="#ffe000">
+  <meta name="yandex-tableau-widget" content="logo=LOGO-min.png, color=#ffe000" />
   <link rel="stylesheet" rel="preload" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+  <link rel="shortcut icon" href="LOGO-t.png" type="image/png">
+  <link rel="icon" sizes="400x400" href="LOGO-t.png">
 </head>
 
 <body>
   <header class="main-screen screen">
-    <div class="container m-center">
+    <div class="m-center">
       <div class="logo"><img class="main-logo m-center" src="img/logo.svg" alt="kreyda logo"></div>
+      <ul class="leng-list">
+        <li class="lang-input" data-lang="en"><img src="img/en.svg"> English</li>
+        <li class="lang-input" data-lang="pl"><img src="img/pl.svg"> Polish</li>
+        <li class="lang-input" data-lang="gm"><img src="img/gm.svg"> German</li>
+        <li class="lang-input" data-lang="bg"><img src="img/bg.svg"> Bulgarian</li>
+        <li class="lang-input" data-lang="ch"><img src="img/ch.svg"> Czech</li>
+        <li class="lang-input" data-lang="bl"><img src="img/bl.svg"> Belarusian</li>
+        <li class="lang-input" data-lang="ml"><img src="img/ml.svg"> Moldovan</li>
+      </ul>
+      <div id="language-button">
+
+        <div class="lang-select">
+          <div class="button-leng"><img src="img/en.svg"></div>
+        </div>
+
+      </div>
     </div>
 
   </header>
 
   <main class="info-screen">
     <div class="container m-center">
+      <h1 id="show430">Крейда маркувальна воскова</h1>
       <div class="wrapp-info">
         <div class="left-block">
           <img class="toper-left" src="img/toper-kreyda.png" alt="toper">
         </div>
         <div class="right-block">
           <div class="text-wrapp">
-            <h1>Крейда маркувальна воскова</h1>
+            <h1 id="hide430">Крейда маркувальна воскова</h1>
 
             <p>
               Залишає насичений яскравий штрих, придатна для нанесення на різні поверхні: метал, камінь, цегла, бетон, асфальт, каучук, дерево, скло, пластик, гума, ПВХ, кераміка, емаль та інші.
@@ -36,7 +59,17 @@
             <p>
               Воскова крейда містить кілька основних компонентів: синтетичний віск, неорга­нічні напов­нювачі та неорганічні кольорові пігменти.
             </p>
-
+            <div class="list-colors">
+              <h2>Кольори:</h2>
+              <ul>
+                <li>білий</li>
+                <li>жовтий</li>
+                <li>синій</li>
+                <li>червоний</li>
+                <li>зелений</li>
+                <li>чорний</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -63,17 +96,41 @@
           </div>
         </div>
       </div>
-        <div class="wrapp-form b-top">
-          <form action="GET">
-           <input type="name">
-           <input type="email">
-            <input type="submit">
-          </form>
-        </div>
+      <div class="wrapp-form b-top">
+        <form action="#" class="form-bottom m-center">
+          <h1>Свяжитесь с нами</h1>
+          <input id="form-name" name="name" type="name" class="form-input" placeholder="Как вас зовут?">
+          <div class="checking" data-check="name">
+            <img class="correct" src="img/checked.svg">
+            <img class="incorrect" src="img/unchecked.svg">
+          </div>
+          <input id="form-email" name="email" type="email" class="form-input" placeholder="Ваш e-mail">
+          <div class="checking" data-check="email">
+            <img class="correct" src="img/checked.svg">
+            <img class="incorrect" src="img/unchecked.svg">
+          </div>
+          <input id="form-subm" type="submit" class="form-input" value="Отправить" disabled>
+        </form>
+      </div>
       <div class="socials b-top">
         <div class="icon"><a href="https://www.instagram.com/primaterra.ua/" target="_blank"><img src="img/instagram.svg" alt=""></a></div>
-        <div class="icon"><a href="https://www.facebook.com/primaterraua/" target="_blank"><img src="img/facebook.svg" alt=""></a></div>
+        <div class="icon"><a href="https://www.facebook.com/kreyda.net/" target="_blank"><img src="img/facebook.svg" alt=""></a></div>
         <div class="icon"><a href="https://www.youtube.com/channel/UCZDV7gEc9KAG6pK6IKCKZSw" target="_blank"><img src="img/youtube.svg" alt=""></a></div>
+      </div>
+    </div>
+    <div class="company-info">
+      <div class="container m-center cont-fl">
+        <div class="company-logo">
+          <img src="img/primaterra.png" alt="">
+        </div>
+        <div class="company-info">
+          <p>
+            ТОВ "НВП "АТЛАНТІС ХІМ"
+          </p>
+          <address>
+            Україна, м. Харків,<br> вул. Данилевського, 6
+          </address>
+        </div>
       </div>
     </div>
   </footer>
