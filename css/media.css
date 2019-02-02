@@ -109,15 +109,9 @@
   html {
     font-size: 12px;
   }
-  ul.leng-list {
-/*    right: 12.6vw;*/
-  }
 }
 
 @media all and (max-width: 430px) {
-  html {
-    font-size: 12px;
-  }
 
   #show430 {
     display: block;

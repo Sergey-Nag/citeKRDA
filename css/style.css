@@ -54,27 +54,33 @@ ul.leng-list {
   display: none;
 }
 
-ul.leng-list li {
+.lang-input {
   cursor: pointer;
   background: #fff;
   color: #000000;
   padding: 8px;
 }
 
-ul.leng-list li:first-child {
+.lang-input:first-child {
   border-radius: 5px 5px 0 0;
 }
 
-ul.leng-list li:last-child {
+.lang-input:last-child {
   border-radius: 0 0 5px 5px;
 }
 
-ul.leng-list li:hover {
-  background-color: #000;
+.lang-input:hover {
+  background-color: #242424;
   color: #fff;
 }
 
-.leng-list img {
+.lang-input.active {
+  cursor: default;
+  background: #797979;
+  color: white;
+}
+
+.lang-input img {
   height: 10px;
 }
 
@@ -317,12 +323,14 @@ ul.leng-list li {
 .company-info {
   align-items: flex-start;
 }
+
 .checking {
   margin-top: -47px;
   margin-right: 12px;
   position: absolute;
   right: 0;
 }
+
 .checking img {
   display: none;
   height: 20px;
