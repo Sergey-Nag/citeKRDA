@@ -75,9 +75,7 @@ ul.leng-list {
 }
 
 .lang-input.active {
-  cursor: default;
-  background: #797979;
-  color: white;
+  font-weight: bolder;
 }
 
 .lang-input img {
@@ -122,7 +120,7 @@ ul.leng-list {
 }
 
 .info-screen {
-  background-color: #ffe000;
+  background: #ffe000;
 }
 
 .wrapp-info {
@@ -230,6 +228,10 @@ ul.leng-list li {
 
 .wrapp-form h1 {
   font-size: 3em;
+}
+
+.wrapp-form h1,
+.wrapp-form h2 {
   margin-bottom: 10px;
 }
 

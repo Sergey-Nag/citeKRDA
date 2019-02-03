@@ -1,6 +1,6 @@
 $(document).ready(function () {
-  let list = $('.leng-list');
-  let isDown = false;
+  var list = $('.leng-list');
+  var isDown = false;
   $('#language-button').click(function (e) {
     list.slideToggle(200);
     isDown = !isDown;
@@ -9,22 +9,22 @@ $(document).ready(function () {
     console.log($(this).attr('data-lang'));
   });
   $(this).mouseup(function (e) {
-    let button = $('#language-button');
+    var button = $('#language-button');
     if (!button.is(e.target) && button.has(e.target).length === 0 && !list.is(e.target) && list.has(e.target).length === 0) list.slideUp(200);
   });
 
 
   $(window).scroll(function (e) {
-    let header = $('.main-screen');
-    let scrollTop = $(this).scrollTop();
-    let hiddenH = $('#show430');
-    let toper = $('.toper-left');
-    let wrapp = $('#wrapp_info');
+    var header = $('.main-screen');
+    var scrollTop = $(this).scrollTop();
+    var hiddenH = $('#show430');
+    var toper = $('.toper-left');
+    var wrapp = $('#wrapp_info');
     if (hiddenH.css('display') == 'block') {
-      let toperLeft = toper.position().left;
-      let listColors = $('.list-colors');
-      let toperPosTop = toper.height() + scrollTop;
-      let wrappPosTop = wrapp.position().top + wrapp.height();
+      var toperLeft = toper.position().left;
+      var listColors = $('.list-colors');
+      var toperPosTop = toper.height() + scrollTop;
+      var wrappPosTop = wrapp.position().top + wrapp.height();
 
       if (scrollTop >= wrapp.position().top && toperPosTop < wrappPosTop) {
         toper.css({
@@ -34,7 +34,7 @@ $(document).ready(function () {
         });
       } else {
         if (toperPosTop >= wrappPosTop) {
-          let posFixed = toperPosTop;
+          var posFixed = toperPosTop;
           toper.css({
             position: 'absolute',
             top: wrappPosTop - toper.height() + 24 + 'px',
@@ -52,7 +52,7 @@ $(document).ready(function () {
   });
 
 
-  let isCheck = {
+  var isCheck = {
     name: false,
     email: false
   };
@@ -63,7 +63,7 @@ $(document).ready(function () {
   $('.form-input[type="email"]').on('blur', checkMail);
 
   function checkingName() {
-    let value = $(this).val();
+    var value = $(this).val();
     if (value.length > 2) {
       form.name = true;
       $('.form-bottom div[data-check="name"]').children('.incorrect').fadeOut(200, function () {
@@ -82,7 +82,7 @@ $(document).ready(function () {
   }
 
   function checkName() {
-    let value = $(this).val();
+    var value = $(this).val();
     if (value.length > 2) {
       form.name = true;
       $('.form-bottom div[data-check="name"]').children('.incorrect').fadeOut(200, function () {
@@ -98,7 +98,7 @@ $(document).ready(function () {
   }
 
   function checkingEmail() {
-    let value = $(this).val();
+    var value = $(this).val();
     if (/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.test(value)) {
       form.email = true;
       $('.form-bottom div[data-check="email"]').children('.incorrect').fadeOut(200, function () {
@@ -117,7 +117,7 @@ $(document).ready(function () {
   }
 
   function checkMail() {
-    let value = $(this).val();
+    var value = $(this).val();
     if (/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.test(value)) {
       form.email = true;
       isCheck.email = true;
