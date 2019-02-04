@@ -4,44 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10">
-  <meta http-equiv="X-UA-Compatible" content="IE=10">
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<!--  <meta http-equiv="cleartype" content="on">-->
- <meta http-equiv="msthemecompatible" content="no">
-  
+
   <title>KREYDA</title>
   <meta name="msapplication-TileColor" content="#ffe000">
   <meta name="theme-color" content="#ffe000">
   <meta name="yandex-tableau-widget" content="logo=LOGO-min.png, color=#ffe000" />
-  <link rel="stylesheet" rel="preload" href="css/fonts.css">
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/media.css">
   <link rel="shortcut icon" href="LOGO-t.png" type="image/png">
   <link rel="icon" sizes="400x400" href="LOGO-t.png">
 
+<!--
+  <link rel="alternate" hreflang="ru-ru" href="http://example.com/ru-ru/">
+  <link rel="alternate" hreflang="ru-us" href="http://example.com/ru-us/">
+  <link rel="alternate" hreflang="ru-ua" href="http://example.com/ru-ua/">
+-->
+
 
 </head>
 
 <body>
-  <header class="main-screen screen">
+  <header class="main-screen d-flex screen">
     <div class="m-center">
       <div class="logo"><img class="main-logo m-center" src="img/LOGO-en.svg" alt="kreyda logo"></div>
       <ul class="leng-list">
-        <li class="lang-input active" data-lang="en"><img src="img/en.svg"> English</li>
-        <li class="lang-input" data-lang="pl"><img src="img/pl.svg"> Polish</li>
-        <li class="lang-input" data-lang="de"><img src="img/de.svg"> German</li>
-        <li class="lang-input" data-lang="bg"><img src="img/bg.svg"> Bulgarian</li>
-        <li class="lang-input" data-lang="cz"><img src="img/cz.svg"> Czech</li>
-        <li class="lang-input" data-lang="by"><img src="img/by.svg"> Belarusian</li>
-        <li class="lang-input" data-lang="md"><img src="img/md.svg"> Moldovan</li>
+        <li class="lang-input active"><a href="#"><img src="img/en.svg" alt="en"> English</a></li>
+        <li class="lang-input"><a href="#"><img alt="pl" src="img/pl.svg"> Polish</a></li>
+        <li class="lang-input"><a href="#"><img alt="de" src="img/de.svg"> German</a></li>
+        <li class="lang-input"><a href="#"><img alt="bg" src="img/bg.svg"> Bulgarian</a></li>
+        <li class="lang-input"><a href="#"><img alt="cz" src="img/cz.svg"> Czech</a></li>
+        <li class="lang-input"><a href="#"><img alt="by" src="img/by.svg"> Belarusian</a></li>
+        <li class="lang-input"><a href="#"><img alt="md" src="img/md.svg"> Moldovan</a></li>
       </ul>
       <div id="language-button">
 
         <div class="lang-select">
-          <div class="button-leng"><img src="img/en.svg"></div>
+          <div class="button-leng"><img alt="en" src="img/en.svg"></div>
         </div>
 
       </div>
@@ -49,10 +50,10 @@
 
   </header>
 
-  <main class="info-screen">
+  <main class="info_screen">
     <div class="container m-center">
       <h1 id="show430">Marking wax crayon</h1>
-      <div id="wrapp_info" class="wrapp-info">
+      <div id="wrapp_info" class="wrapp-info d-flex">
         <div class="left-block">
           <img class="toper-left" src="img/toper-kreyda.png" alt="toper">
         </div>
@@ -85,9 +86,10 @@
       </div>
     </div>
   </main>
+
   <footer class="footer-screen">
     <div class="container m-center">
-      <div class="wrapp-info">
+      <div class="wrapp-info d-flex">
         <div class="left-block">
         </div>
         <div class="right-block">
@@ -107,36 +109,53 @@
         </div>
       </div>
       <div class="wrapp-form b-top">
-        <form action="#" class="form-bottom m-center">
+        <form id="send-form" class="form-bottom m-center">
           <h1>We are looking for dealers in Europe.</h1>
           <h2>Leave your contacts and we will contact you</h2>
-          <input id="form-name" name="name" type="name" class="form-input" placeholder="What is your name?">
+          <input id="form-name" name="name" type="text" class="form-input" placeholder="What is your name?">
           <div class="checking" data-check="name">
-            <img class="correct" src="img/checked.svg">
-            <img class="incorrect" src="img/unchecked.svg">
+            <img class="correct" alt="correct" src="img/checked.svg">
+            <img class="incorrect" alt="incorrect" src="img/unchecked.svg">
+          </div>
+          <input id="form-name" name="country" type="text" class="form-input" placeholder="Where are you from?">
+          <div class="checking" data-check="country">
+            <img class="correct" alt="correct" src="img/checked.svg">
+            <img class="incorrect" alt="incorrect" src="img/unchecked.svg">
           </div>
           <input id="form-email" name="email" type="email" class="form-input" placeholder="Your e-mail">
           <div class="checking" data-check="email">
-            <img class="correct" src="img/checked.svg">
-            <img class="incorrect" src="img/unchecked.svg">
+            <img class="correct" alt="correct" src="img/checked.svg">
+            <img class="incorrect" alt="incorrect" src="img/unchecked.svg">
           </div>
           <input id="form-subm" type="submit" class="form-input" value="Send" disabled>
         </form>
       </div>
-      <div class="socials b-top">
-        <div class="icon"><a href="https://www.instagram.com/primaterra.ua/" target="_blank"><img src="img/instagram.svg" alt=""></a></div>
-        <div class="icon"><a href="https://www.facebook.com/kreyda.net/" target="_blank"><img src="img/facebook.svg" alt=""></a></div>
-        <div class="icon"><a href="https://www.youtube.com/channel/UCZDV7gEc9KAG6pK6IKCKZSw" target="_blank"><img src="img/youtube.svg" alt=""></a></div>
+      <div class="socials d-flex b-top">
+        <div class="icon">
+          <a href="https://www.instagram.com/primaterra.ua/" target="_blank">
+            <img src="img/instagram.svg" alt="instagram">
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.facebook.com/kreyda.net/" target="_blank">
+            <img src="img/facebook.svg" alt="facebook">
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://www.youtube.com/channel/UCZDV7gEc9KAG6pK6IKCKZSw" target="_blank">
+            <img src="img/youtube.svg" alt="youtube">
+          </a>
+        </div>
       </div>
     </div>
     <div class="company-info">
-      <div class="container m-center cont-fl">
+      <div class="container m-center d-flex cont-center">
         <div class="company-logo">
-          <img src="img/primaterra.png" alt="">
+          <img src="img/primaterra.png" alt="primaterra logo">
         </div>
         <div class="company-info">
           <p>
-            LLC "Academic and Research Enterprise "ATLANTIS HIM"
+            LLC "SPI "ATLANTIS CHEM" trademark "PRIMATERRA"
           </p>
           <address>
             Ukraine, Kharkov<br>Danilevsky street, 6
