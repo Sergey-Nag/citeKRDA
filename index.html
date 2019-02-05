@@ -17,7 +17,7 @@
   <link rel="shortcut icon" href="LOGO-t.png" type="image/png">
   <link rel="icon" sizes="400x400" href="LOGO-t.png">
 
-<!--
+  <!--
   <link rel="alternate" hreflang="ru-ru" href="http://example.com/ru-ru/">
   <link rel="alternate" hreflang="ru-us" href="http://example.com/ru-us/">
   <link rel="alternate" hreflang="ru-ua" href="http://example.com/ru-ua/">
@@ -127,9 +127,15 @@
             <img class="correct" alt="correct" src="img/checked.svg">
             <img class="incorrect" alt="incorrect" src="img/unchecked.svg">
           </div>
-          <input id="form-subm" type="submit" class="form-input" value="Send" disabled>
+          <input type="hidden" name="page-lang" value="en">
+          <input id="form-subm" type="submit" class="form-input" value="Send" >
+          <div class="wrapp-email">
+            <div class="or-sample"><span>or</span></div>
+            <p>сontact us at <a href="mailto:info@kreyda.net" class="link">info@kreyda.net</a></p>
+          </div>
         </form>
       </div>
+
       <div class="socials d-flex b-top">
         <div class="icon">
           <a href="https://www.instagram.com/primaterra.ua/" target="_blank">
@@ -146,6 +152,16 @@
             <img src="img/youtube.svg" alt="youtube">
           </a>
         </div>
+        <div class="icon">
+          <a href="viber://chat?number=%2B380675701621">
+            <img src="img/viber.svg" alt="viber">
+          </a>
+        </div>
+        <div class="icon">
+          <a href="https://t.me/kreyda_ua" target="_blank">
+            <img src="img/telegram.svg" alt="telegram">
+          </a>
+        </div>
       </div>
     </div>
     <div class="company-info">
@@ -153,7 +169,7 @@
         <div class="company-logo">
           <img src="img/primaterra.png" alt="primaterra logo">
         </div>
-        <div class="company-info">
+        <div class="company-adress">
           <p>
             LLC "SPI "ATLANTIS CHEM" trademark "PRIMATERRA"
           </p>

@@ -17,6 +17,14 @@ a {
   text-decoration: none;
 }
 
+a.link {
+  color: #7bbcff;
+}
+
+a.link:hover {
+  color: #a9d3ff;
+}
+
 .d-flex {
   display: -webkit-box;
   display: -webkit-flex;
@@ -24,7 +32,6 @@ a {
   display: -ms-flexbox;
   display: flex;
 }
-
 
 .icon,
 .form-input,
@@ -56,6 +63,67 @@ h3 {
   position: absolute;
   right: 15px;
   top: 15px;
+}
+
+#language-button:hover .button-leng {
+  transform: scale(0.85);
+}
+
+#language-button.wow:hover {
+  /*  transform: scale(1.1);*/
+}
+
+#language-button.wow {
+  animation: buttonShow 1.5s ease;
+}
+
+#language-button.wow .button-leng {
+  animation: buttonSmall 1.5s ease;
+}
+
+@keyframes buttonShow {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.3);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes buttonSmall {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(0.79);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(0.79);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
 }
 
 .lang-select {
@@ -108,6 +176,7 @@ ul.leng-list {
 }
 
 .button-leng {
+  transition: transform .2s ease;
   width: 25px;
   height: 25px;
 }
@@ -141,7 +210,8 @@ ul.leng-list {
 
 .main-logo {
   display: block;
-  height: 55vh;
+  max-height: 55vh;
+  width: 80vw;
 }
 
 .info_screen {
@@ -257,9 +327,35 @@ ul.leng-list {
 .form-bottom {
   position: relative;
   width: 600px;
-  padding: 40px 0;
+  padding: 40px 0 15px;
 }
+
+.wrapp-email {
+  text-align: center;
+  border-top: solid 2px white;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.wrapp-email p {
+  margin: 15px 0;
+}
+
+.or-sample {
+  width: 100%;
+  margin-top: -27px;
+  position: absolute;
+}
+
+.or-sample span {
+  background: #0b0b0b;
+  padding: 0 5px;
+}
+
+
 .form-bottom .error {
+  position: absolute;
+  bottom: 87px;
   color: #ff6500;
   font-weight: bolder;
 }
@@ -293,6 +389,7 @@ ul.leng-list {
   0% {
     background-position: 0%;
   }
+
   100% {
     background-position: 98.5%;
   }
@@ -304,6 +401,7 @@ ul.leng-list {
   color: rgba(255, 255, 255, 0.7);
   border-color: rgba(255, 255, 255, 0.7);
 }
+
 .form-input[type="submit"].sending:disabled {
   cursor: wait;
 }
@@ -339,17 +437,23 @@ ul.leng-list {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.company-info {
-  /*  text-align: center;*/
-  font-size: 0.9em;
+.company-adress,
+.company-logo {
+  width: 50%;
+}
+
+.company-adress {
+  font-size: 0.8em;
 }
 
 .company-logo img {
+  float: right;
+  margin-right: 20px;
   width: 100px;
 }
 
 .cont-center {
-  justify-content: center;
+  /*  justify-content: center;*/
 }
 
 .cont-fl > div {
@@ -361,6 +465,7 @@ ul.leng-list {
 }
 
 .company-logo {
+  align-self: center;
   align-items: flex-end;
 }
 

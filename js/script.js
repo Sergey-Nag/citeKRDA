@@ -1,4 +1,14 @@
 $(document).ready(function () {
+  var lButton = $('#language-button');
+  lButton.ready(function () {
+    setTimeout(function () {
+      lButton.addClass('wow');
+      setTimeout(function () {
+        lButton.removeClass('wow');
+      }, 1500);
+    }, 1500);
+
+  });
   var list = $('.leng-list');
   var isDown = false;
   var FORM = $('#send-form');
@@ -32,6 +42,8 @@ $(document).ready(function () {
         formSubm.attr('disabled', false);
         formSubm.attr('value', 'Send');
         FORM.append('<span class="error">Something happend, try again please</span>');
+        var res = error.responseText;
+        console.log(res)
       },
       success: function (data) {
         var res = data.result
@@ -99,69 +111,77 @@ $(document).ready(function () {
 
 
 
-var isCheck = {
-  name: false,
-  country: false,
-  email: false
-};
+  var isCheck = {
+    name: false,
+    country: false,
+    email: false
+  };
 
-$('.form-input[name="name"]').on('input', checkingVal); $('.form-input[name="name"]').on('blur', checkingVal); $('.form-input[name="country"]').on('input', checkingVal); $('.form-input[name="country"]').on('blur', checkingVal); $('.form-input[name="email"]').on('input', checkingEmail); $('.form-input[name="email"]').on('blur', checkMail);
+  $('.form-input[name="name"]').on('input', checkingVal);
+  $('.form-input[name="name"]').on('blur', checkingVal);
+  $('.form-input[name="country"]').on('input', checkingVal);
+  $('.form-input[name="country"]').on('blur', checkingVal);
+  $('.form-input[name="email"]').on('input', checkingEmail);
+  $('.form-input[name="email"]').on('blur', checkMail);
 
-function checkingVal() {
-  var name = $(this).attr('name');
-  var value = $(this).val();
-  if (value.length > 2) {
-    form[name] = true;
-    $('.form-bottom div[data-check="' + name + '"]').children('.incorrect').fadeOut(200, function () {
-      $('.form-bottom div[data-check="' + name + '"]').children('.correct').fadeIn(200);
-    });
-    isCheck[name] = true;
-  } else {
-    form[name] = false;
-    if (isCheck[name]) {
-      $('.form-bottom div[data-check="' + name + '"]').children('.correct').fadeOut(200, function () {
-        $('.form-bottom div[data-check="' + name + '"]').children('.incorrect').fadeIn(200);
+  function checkingVal() {
+    var name = $(this).attr('name');
+    var value = $(this).val();
+    if (value.length > 2) {
+      form[name] = true;
+      $('.form-bottom div[data-check="' + name + '"]').children('.incorrect').fadeOut(200, function () {
+        $('.form-bottom div[data-check="' + name + '"]').children('.correct').fadeIn(200);
       });
+      isCheck[name] = true;
+    } else {
+      form[name] = false;
+      if (isCheck[name]) {
+        $('.form-bottom div[data-check="' + name + '"]').children('.correct').fadeOut(200, function () {
+          $('.form-bottom div[data-check="' + name + '"]').children('.incorrect').fadeIn(200);
+        });
+      }
     }
+    allowForm();
   }
-  allowForm();
-}
 
-function checkingEmail() {
-  var value = $(this).val();
-  if (/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.test(value)) {
-    form.email = true;
-    $('.form-bottom div[data-check="email"]').children('.incorrect').fadeOut(200, function () {
-      $('.form-bottom div[data-check="email"]').children('.correct').fadeIn(200);
-    });
-    isCheck.email = true;
-  } else {
-    form.email = false;
-    if (isCheck.email) {
-      $('.form-bottom div[data-check="email"]').children('.correct').fadeOut(200, function () {
-        $('.form-bottom div[data-check="email"]').children('.incorrect').fadeIn(200);
+  function checkingEmail() {
+    var value = $(this).val();
+    if (/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.test(value)) {
+      form.email = true;
+      $('.form-bottom div[data-check="email"]').children('.incorrect').fadeOut(200, function () {
+        $('.form-bottom div[data-check="email"]').children('.correct').fadeIn(200);
       });
+      isCheck.email = true;
+    } else {
+      form.email = false;
+      if (isCheck.email) {
+        $('.form-bottom div[data-check="email"]').children('.correct').fadeOut(200, function () {
+          $('.form-bottom div[data-check="email"]').children('.incorrect').fadeIn(200);
+        });
+      }
     }
+    allowForm();
   }
-  allowForm();
-}
 
-function checkMail() {
-  var value = $(this).val();
-  if (/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.test(value)) {
-    form.email = true;
-    isCheck.email = true;
-    $('.form-bottom div[data-check="email"]').children('.incorrect').fadeOut(200, function () {
-      $('.form-bottom div[data-check="email"]').children('.correct').fadeIn(200);
-    });
-  } else {
-    form.email = false;
-    $('.form-bottom div[data-check="email"]').children('.correct').fadeOut(200, function () {
-      $('.form-bottom div[data-check="email"]').children('.incorrect').fadeIn(200);
-    });
+  function checkMail() {
+    var value = $(this).val();
+    if (value.length > 0) {
+
+      if (/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.test(value)) {
+        form.email = true;
+        isCheck.email = true;
+        $('.form-bottom div[data-check="email"]').children('.incorrect').fadeOut(200, function () {
+          $('.form-bottom div[data-check="email"]').children('.correct').fadeIn(200);
+        });
+      } else {
+        form.email = false;
+        $('.form-bottom div[data-check="email"]').children('.correct').fadeOut(200, function () {
+          $('.form-bottom div[data-check="email"]').children('.incorrect').fadeIn(200);
+        });
+      }
+    }
+    allowForm();
   }
-  allowForm();
-}
 });
 
 var form = {

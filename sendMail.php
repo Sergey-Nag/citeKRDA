@@ -3,18 +3,27 @@
 $msg_box = ""; // в этой переменной будем хранить сообщения формы
 $errors = array(); // контейнер для ошибок
 // проверяем корректность полей
-if($_GET['name'] == "")  $errors[] = "name=";
-if($_GET['country'] == "") $errors[] = "&country=";
-if($_GET['email'] == "") $errors[] = "&e-mail=";
+if($_GET['name'] == "" || empty($_GET['name']))  $errors[] = "name=";
+if($_GET['country'] == "" || empty($_GET['country'])) $errors[] = "&country=";
+if($_GET['page-lang'] == "" || empty($_GET['page-lang'])) $errors[] = "&page-lang=";
+if($_GET['email'] == "" || empty($_GET['email'])) $errors[] = "&e-mail=";
+
+$ip = $_SERVER['REMOTE_ADDR']; //Ip – клиента 
+$result_ip = (array)json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
 
 // если форма без ошибок
 if(empty($errors)) {
     // собираем данные из формы
-    $message  = "Имя: " . $_GET['name'] . "\n";
+    $message = "Язык: " . $_GET['page-lang'] . "\n";
+    $message .= "Имя: " . $_GET['name'] . "\n";
     $message .= "Страна: " . $_GET['country'] . "\n";
     $message .= "E-mail: " . $_GET['email'] . "\n";
-//    send_mail($message); // отправим письмо
+    mail("n.s.primaterra@gmail.com", "Обратная связь с KREYDA-".$_GET['page-lang'], $message); // отправим письмо
     // выведем сообщение об успехе
+    $message .=$ip."\n";
+    foreach($result_ip as $data) {
+      $message .=" - ".[$data]." - ".$data."\n";      
+    }
     $msg_box = $message;
 } else {
     // если были ошибки, то выводим их
