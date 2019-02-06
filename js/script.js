@@ -9,6 +9,31 @@ $(document).ready(function () {
     }, 1500);
 
   });
+
+  var carousel = $("#carousel");
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 5,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      1084: {
+        slidesPerView: 4,
+        spaceBetween: 15
+      },
+      872: {
+        slidesPerView: 3
+      },
+      390: {
+        slidesPerView: 1,
+        spaceBetween: 5
+      }
+    }
+  });
+
   var list = $('.leng-list');
   var isDown = false;
   var FORM = $('#send-form');
@@ -42,8 +67,7 @@ $(document).ready(function () {
         formSubm.attr('disabled', false);
         formSubm.attr('value', 'Send');
         FORM.append('<span class="error">Something happend, try again please</span>');
-        var res = error.responseText;
-        console.log(res)
+        console.log(error.responseText)
       },
       success: function (data) {
         var res = data.result

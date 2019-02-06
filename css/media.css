@@ -2,13 +2,15 @@
   html {
     font-size: 18px;
   }
+
   .main-logo {
     width: 40vw;
   }
+
   .main-screen {
     height: 50vh;
   }
-  
+
 }
 
 @media all and (max-width: 1100px) {
@@ -37,6 +39,10 @@
     min-height: 20vh;
     width: 85vw;
   }
+
+  .vid-wrapp {
+    height: 200px;
+  }
 }
 
 @media all and (max-width: 800px) {
@@ -55,11 +61,40 @@
   }
 }
 
+@media all and (max-width: 500px) {
+  #carousel {
+    width: 210%;
+    margin-left: -52.5%;
+  }
+}
+
+@media all and (max-width: 450px) {
+  #carousel {
+    width: 250%;
+    margin-left: -76%;
+  }
+}
+
+@media all and (max-width: 390px) {
+  #carousel {
+    width: 100%;
+    margin-left: 0%;
+  }
+}
+
+
 @media all and (max-width: 735px) {
   html {
     font-size: 13px;
   }
 
+  .video-wrapp {
+    padding: 0 20px;
+  }
+
+  .vid-wrapp {
+    margin: 0 10px;
+  }
 
   .container {
     width: 90%;
@@ -71,8 +106,12 @@
 
   .toper-left {
     float: none;
-    height: 850px;
-    margin-bottom: -250px;
+    height: 900px;
+    margin-bottom: -500px;
+  }
+
+  .or-sample {
+    margin-top: -26px;
   }
 
   .checking {
@@ -90,12 +129,17 @@
     display: block;
   }
 
-  .footer-screen .wrapp-info {
+  .footer-info-screen {
     display: none;
   }
 
-  .footer-screen .wrapp-form.b-top {
-    border: none;
+  .info_screen,
+  .info_screen .wrapp-info {
+    padding-bottom: 0px;
+  }
+
+  .media-screen .wrapp-info {
+    padding-top: 30px;
   }
 
   .wrapp-info h1,
@@ -110,6 +154,11 @@
     width: 34vw;
     margin-bottom: 0px;
   }
+
+  .vid-wrapp {
+    margin: 0 10px;
+    height: 150px;
+  }
 }
 
 @media all and (max-width: 501px) {
@@ -119,11 +168,30 @@
     right: 5%;
   }
 
+  .video-wrapp {
+    padding: 0;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .videos {
+    flex-direction: column;
+  }
+
+  .vid-wrapp {
+    width: auto;
+    margin: 0 0 15px;
+    height: 50vw;
+  }
 }
 
 @media all and (max-width: 470px) {
   html {
     font-size: 12px;
+  }
+
+  .or-sample {
+    margin-top: -25.2px;
   }
 }
 
@@ -157,14 +225,23 @@
     font-size: 1.48em;
   }
 
-  .form-input {
+  .form-input,
+  .wrapp-email {
     font-size: 1.4em;
+  }
+
+  .form-input {
     padding: 12px;
+  }
+
+  .or-sample {
+    margin-top: -29px;
   }
 
   .checking {
     margin-top: -50px;
   }
+
   .icon {
     margin: 20px 15px;
   }
@@ -175,10 +252,19 @@
     display: block;
     font-size: 12.5vw;
   }
+
   .icon {
-    margin: 20px 10px;
+    margin: 0 5px;
   }
-  .icon img{
-    width: 21px;
+
+  .icon img {
+    width: 27px;
+  }
+  .socials {
+    justify-content: space-between;
+    padding: 20px 10px;
+  }
+  .vid-wrapp {
+    margin: 0 0 10px;
   }
 }

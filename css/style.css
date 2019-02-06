@@ -189,9 +189,6 @@ ul.leng-list {
   width: 60%;
 }
 
-.b-top {
-  border-top: solid 2px white;
-}
 
 .main-screen {
   height: 81vh;
@@ -199,7 +196,7 @@ ul.leng-list {
   position: relative;
 }
 
-.main-screen::after {
+.main-screen::after, .footer-info-screen::after {
   content: '';
   position: absolute;
   height: 20px;
@@ -213,15 +210,20 @@ ul.leng-list {
   max-height: 55vh;
   width: 80vw;
 }
-
-.info_screen {
+main {
   display: block;
+}
+.info_screen, .media-screen {
   background: #ffe000;
+  padding-bottom: 80px;
 }
 
 .wrapp-info {
   padding: 80px 0;
   justify-content: space-between;
+}
+.media-screen .wrapp-info {
+  padding-bottom: 0px;
 }
 
 .left-block {
@@ -236,7 +238,7 @@ ul.leng-list {
   float: right;
   position: relative;
   margin-right: 40px;
-  margin-bottom: -450px;
+  margin-bottom: -500px;
   z-index: 100;
   height: 1095px;
 }
@@ -246,7 +248,7 @@ ul.leng-list {
   font-weight: 700;
 }
 
-.text-wrapp h1 {
+.container h1 {
   text-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
   font-size: 4em;
   line-height: 1em;
@@ -257,7 +259,9 @@ ul.leng-list {
 #show430 {
   display: none;
 }
-
+h1#show430 {
+  margin-bottom: 10px;
+}
 .text-wrapp h2 {
   font-size: 3.3em;
 }
@@ -278,7 +282,46 @@ ul.leng-list {
   margin-left: 1.01em;
 }
 
-.footer-screen {
+.carousel-wrapp {
+  overflow: hidden;
+  width: 100%;
+}
+#carousel{
+  margin-left: -25%;
+  width: 150%;
+}
+
+.swiper-pagination-bullet {
+  background: black;
+  transform: scale(1.3);
+}
+.swiper-pagination-bullet {
+  opacity: .4;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #ffe000;
+  opacity: 1;
+}
+.swiper-button-prev{
+  left: 250px;
+}
+.swiper-button-next{}
+.swiper-slide img {
+  width: inherit;
+}
+.video-wrapp {
+  padding: 0 50px;
+}
+.videos {
+  justify-content: space-between;
+}
+.vid-wrapp {
+  width: 50%;
+  height: 300px;
+  margin: 0 20px;
+}
+
+.footer-screen, .footer-info-screen {
   color: white;
   z-index: 10;
   position: relative;
@@ -286,7 +329,7 @@ ul.leng-list {
   padding-bottom: 15px;
 }
 
-.footer-screen::before {
+.footer-screen::before, .footer-info-screen::before {
   content: '';
   position: absolute;
   height: 20px;
@@ -314,7 +357,9 @@ ul.leng-list {
 .icon img {
   width: 25px;
 }
-
+.wrapp-form {
+  border-bottom: 2px solid #fff;
+}
 .wrapp-form h1 {
   font-size: 3em;
 }
