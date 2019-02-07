@@ -1,3 +1,10 @@
+<?php
+  header("Access-Control-Allow-Origin: *");
+  header("Access-Control-Allow-Origin: kreyda.pro");
+  header("Access-Control-Allow-Origin: http://kreyda.pro/");
+  header("Access-Control-Allow-Origin: *.kreyda.pro");
+  header("Access-Control-Allow-Origin: http://kreyda.pro/fonts/Exo20-ExtraBold.woff");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +34,6 @@
   <link rel="stylesheet" href="css/media.css">
   <link rel="shortcut icon" href="LOGO-min.png" type="image/png">
   <link rel="icon" sizes="400x400" href="LOGO-t.png">
-
 
 </head>
 
