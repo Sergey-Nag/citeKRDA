@@ -11,26 +11,26 @@ if($_GET['email'] == "" || empty($_GET['email'])) $errors[] = "&email=";
 $ip = $_SERVER['REMOTE_ADDR']; //Ip – клиента 
 $result_ip = (array)json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
 
-$is_bot = preg_match(
- "~(Google|Yahoo|Rambler|Bot|Yandex|Spider|Snoopy|Crawler|Finder|Mail|curl)~i", 
- $_SERVER['HTTP_USER_AGENT']
-);
-$geo = !$is_bot ? json_decode(file_get_contents("http://api.sypexgeo.net/json/{$ip}"), true) : [];
-$result_geo = var_dump($geo);
+//$is_bot = preg_match(
+// "~(Google|Yahoo|Rambler|Bot|Yandex|Spider|Snoopy|Crawler|Finder|Mail|curl)~i", 
+// $_SERVER['HTTP_USER_AGENT']
+//);
+//$geo = !$is_bot ? json_decode(file_get_contents("http://api.sypexgeo.net/json/{$ip}"), true) : [];
+//$result_geo = var_dump($geo);
 
 // если форма не пустая
 if(empty($errors)) {
     // собираем данные из формы
-    $message = "Язык: " . $_GET['page-lang'] . "\n";
+    $message = "Форма с сайта: " . $_GET['page-lang'] . "\n";
     $message .= "Имя: " . $_GET['name'] . "\n";
     $message .= "Страна: " . $_GET['country'] . "\n";
     $message .= "E-mail: " . $_GET['email'] . "\n";
-    mail("n.s.primaterra@gmail.com", "Обратная связь с KREYDA-".$_GET['page-lang'], $message); // отправим письмо
-    // выведем сообщение об успехе
-    $message .=$ip."\n";
-    foreach($result_ip as $data) {
-      $message .=" - ".[$data]." - ".$data."\n";      
+    foreach($result_ip as $res) {
+      $message .= " - ".$res."\n";
     }
+    mail("info@kreyda.net", "Обратная связь с KREYDA-".$_GET['page-lang'], $message); // отправим письмо
+    // выведем сообщение об успехе
+    
     $msg_box = $message;
 } else {
     // если были ошибки, то выводим их
@@ -39,7 +39,7 @@ if(empty($errors)) {
         $msg_box .= $one_error;
     }
 }
-sleep(1);
+sleep(0.5);
 // делаем ответ на клиентскую часть в формате JSON
 echo json_encode(array(
     'result' => $msg_box

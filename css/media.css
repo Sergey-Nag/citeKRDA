@@ -107,7 +107,7 @@
   .toper-left {
     float: none;
     height: 900px;
-    margin-bottom: -500px;
+    margin-bottom: -500px!important;
   }
 
   .or-sample {
@@ -152,9 +152,11 @@
     float: none;
     height: auto;
     width: 34vw;
-    margin-bottom: 0px;
+    margin-bottom: 0px!important;
   }
-
+  html[lang="pl"] .text-wrapp p, html[lang="pl"] .text-wrapp ul {
+    font-size: 1.6em;
+  }
   .vid-wrapp {
     margin: 0 10px;
     height: 150px;
@@ -216,7 +218,7 @@
   }
 
   .toper-left {
-    margin: 0;
+    margin: 0!important;
     float: left;
   }
 
@@ -242,9 +244,6 @@
     margin-top: -50px;
   }
 
-  .icon {
-    margin: 20px 15px;
-  }
 }
 
 @media all and (max-width: 330px) {
@@ -253,17 +252,6 @@
     font-size: 12.5vw;
   }
 
-  .icon {
-    margin: 0 5px;
-  }
-
-  .icon img {
-    width: 27px;
-  }
-  .socials {
-    justify-content: space-between;
-    padding: 20px 10px;
-  }
   .vid-wrapp {
     margin: 0 0 10px;
   }

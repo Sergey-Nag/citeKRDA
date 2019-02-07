@@ -7,7 +7,8 @@
   <link rel="alternate" hreflang="pl-PL" href="http://pl.kreyda.pro/">
   <link rel="alternate" hreflang="de-DE" href="http://de.kreyda.pro/">
   <link rel="alternate" hreflang="bg-BG" href="http://bg.kreyda.pro/">
-  <link rel="alternate" hreflang="cs-CZ" href="http://bg.kreyda.pro/">
+  <link rel="alternate" hreflang="cs-CZ" href="http://cs.kreyda.pro/">
+  <link rel="alternate" hreflang="be-BY" href="http://be.kreyda.pro/">
   <link rel="alternate" hreflang="ro-MD" href="http://ro.kreyda.pro/">
   <link rel="alternate" hreflang="x-default" href="http://kreyda.pro/">
 
@@ -23,11 +24,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/css/swiper.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/media.css">
-  <link rel="shortcut icon" href="LOGO-t.png" type="image/png">
+  <link rel="shortcut icon" href="LOGO-min.png" type="image/png">
   <link rel="icon" sizes="400x400" href="LOGO-t.png">
-
-  <!--
--->
 
 
 </head>
@@ -37,13 +35,27 @@
     <div class="m-center">
       <div class="logo"><img class="main-logo m-center" src="img/LOGO-en.svg" alt="kreyda logo"></div>
       <ul class="leng-list">
-        <li class="lang-input active"><a href="#"><img src="img/en.svg" alt="en"> English</a></li>
-        <li class="lang-input"><a href="#"><img alt="pl" src="img/pl.svg"> Polski</a></li>
-        <li class="lang-input"><a href="#"><img alt="de" src="img/de.svg"> Deutsch</a></li>
-        <li class="lang-input"><a href="#"><img alt="bg" src="img/bg.svg"> Български</a></li>
-        <li class="lang-input"><a href="#"><img alt="cs" src="img/cz.svg"> Čeština</a></li>
-        <li class="lang-input"><a href="#"><img alt="be" src="img/by.svg"> Беларуская</a></li>
-        <li class="lang-input"><a href="#"><img alt="ro" src="img/md.svg"> Română</a></li>
+        <a class="link-list" href="http://kreyda.pro/">
+          <li class="lang-input active"><img src="img/en.svg" alt="en"> English</li>
+        </a>
+        <a class="link-list" href="http://pl.kreyda.pro/">
+          <li class="lang-input"><img alt="pl" src="img/pl.svg"> Polski</li>
+        </a>
+        <a class="link-list" href="http://de.kreyda.pro/">
+          <li class="lang-input"><img alt="de" src="img/de.svg"> Deutsch</li>
+        </a>
+        <a class="link-list" href="http://bg.kreyda.pro/">
+          <li class="lang-input"><img alt="bg" src="img/bg.svg"> Български</li>
+        </a>
+        <a class="link-list" href="http://cs.kreyda.pro/">
+          <li class="lang-input"><img alt="cs" src="img/cz.svg"> Čeština</li>
+        </a>
+        <a class="link-list" href="http://be.kreyda.pro/">
+          <li class="lang-input"><img alt="be" src="img/by.svg"> Беларуская</li>
+        </a>
+        <a class="link-list" href="http://ro.kreyda.pro/">
+          <li class="lang-input"><img alt="ro" src="img/md.svg"> Română</li>
+        </a>
       </ul>
       <div id="language-button">
 
@@ -174,7 +186,7 @@
             <img class="correct" alt="correct" src="img/checked.svg">
             <img class="incorrect" alt="incorrect" src="img/unchecked.svg">
           </div>
-          <input id="form-name" name="country" type="text" class="form-input" placeholder="Where are you from?">
+          <input id="form-country" name="country" type="text" class="form-input" placeholder="Where are you from?">
           <div class="checking" data-check="country">
             <img class="correct" alt="correct" src="img/checked.svg">
             <img class="incorrect" alt="incorrect" src="img/unchecked.svg">
@@ -184,42 +196,21 @@
             <img class="correct" alt="correct" src="img/checked.svg">
             <img class="incorrect" alt="incorrect" src="img/unchecked.svg">
           </div>
+
           <input type="hidden" name="page-lang" value="en">
-          <input id="form-subm" type="submit" class="form-input" value="Send" disabled>
+          <input id="form-subm" type="submit" class="form-input" value="Send" data-sending="Sending..." data-sended="Sended" disabled>
+
           <div class="wrapp-email">
             <div class="or-sample"><span>or</span></div>
             <p>сontact us at <a href="mailto:info@kreyda.net" class="link">info@kreyda.net</a></p>
+            <p>Phone <a class="link" href="tel:+380577129092">+38 (057) 7129092</a><br>
+              Mobile <a class="link" href="tel:+380675701621">+38 (067) 5701621</a><br>
+              Viber <a class="link" href="viber://chat?number=%2B380675701621">+38 (067) 5701621</a><br>
+              Telegram <a class="link" href="https://t.me/primaterra_manager">+38 (067) 5701621</a></p>
           </div>
         </form>
       </div>
 
-      <div class="socials d-flex b-top">
-        <div class="icon">
-          <a href="https://www.instagram.com/primaterra.ua/" target="_blank">
-            <img src="img/instagram.svg" alt="instagram">
-          </a>
-        </div>
-        <div class="icon">
-          <a href="https://www.facebook.com/kreyda.net/" target="_blank">
-            <img src="img/facebook.svg" alt="facebook">
-          </a>
-        </div>
-        <div class="icon">
-          <a href="https://www.youtube.com/channel/UCZDV7gEc9KAG6pK6IKCKZSw" target="_blank">
-            <img src="img/youtube.svg" alt="youtube">
-          </a>
-        </div>
-        <div class="icon">
-          <a href="viber://chat?number=%2B380675701621">
-            <img src="img/viber.svg" alt="viber">
-          </a>
-        </div>
-        <div class="icon">
-          <a href="https://t.me/kreyda_ua" target="_blank">
-            <img src="img/telegram.svg" alt="telegram">
-          </a>
-        </div>
-      </div>
     </div>
     <div class="company-info">
       <div class="container m-center d-flex cont-center">
