@@ -31,7 +31,7 @@ if(empty($errors)) {
     mail("info@kreyda.net", "Обратная связь с KREYDA-".$_GET['page-lang'], $message); // отправим письмо
     // выведем сообщение об успехе
     
-    $msg_box = $message;
+    $msg_box = "done";
 } else {
     // если были ошибки, то выводим их
     $msg_box = "";

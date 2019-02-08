@@ -1,9 +1,30 @@
-<?php
-  header("Access-Control-Allow-Origin: *");
-  header("Access-Control-Allow-Origin: kreyda.pro");
-  header("Access-Control-Allow-Origin: http://kreyda.pro/");
-  header("Access-Control-Allow-Origin: *.kreyda.pro");
-  header("Access-Control-Allow-Origin: http://kreyda.pro/fonts/Exo20-ExtraBold.woff");
+<?php 
+$sites = array(
+  "pl" => "http://pl.kreyda.pro/",
+  "de" => "http://de.kreyda.pro/",
+  "bg" => "http://bg.kreyda.pro/",
+  "cs" => "http://cs.kreyda.pro/",
+  "be" => "http://be.kreyda.pro/",
+  "ro" => "http://ro.kreyda.pro/",
+  "en" => "http://kreyda.pro/"
+);
+
+$lang = $_COOKIE["lang"];
+foreach($_SERVER as $key => $dat) {
+  echo $key." => ".$dat."<br>";
+}
+if (empty($lang)) {
+
+  $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);  
+  
+  if (!in_array($lang, array_keys($sites))) {
+    $lang = 'en';
+  }
+  setcookie ("lang", $lang, time()+30*24*60*60, "/", $_SERVER['HTTP_HOST']);
+}
+
+
+//echo header('Location: '.$sites[$lang]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +40,7 @@
   <link rel="alternate" hreflang="ro-MD" href="http://ro.kreyda.pro/">
   <link rel="alternate" hreflang="en" href="http://kreyda.pro/">
   <link rel="alternate" hreflang="x-default" href="http://kreyda.pro/">
+  
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -160,6 +182,8 @@
           <div class="swiper-pagination"></div>
 
         </div>
+        <div class="button-nav nav-prev"></div>
+        <div class="button-nav nav-next"></div>
       </div>
 
       <div class="container m-center">

@@ -59,6 +59,15 @@
   ul.leng-list img {
     height: 14px;
   }
+  
+  .button-nav {
+    opacity: .8;
+  }
+  .carousel-wrapp:hover .button-nav:hover,
+  .carousel-wrapp:hover .button-nav:focus,
+  .button-nav:focus {
+    opacity: clear;
+  }
 }
 
 @media all and (max-width: 500px) {
@@ -107,7 +116,7 @@
   .toper-left {
     float: none;
     height: 900px;
-    margin-bottom: -500px!important;
+    margin-bottom: -500px !important;
   }
 
   .or-sample {
@@ -152,11 +161,14 @@
     float: none;
     height: auto;
     width: 34vw;
-    margin-bottom: 0px!important;
+    margin-bottom: 0px !important;
   }
-  html[lang="pl"] .text-wrapp p, html[lang="pl"] .text-wrapp ul {
+
+  html[lang="pl"] .text-wrapp p,
+  html[lang="pl"] .text-wrapp ul {
     font-size: 1.6em;
   }
+
   .vid-wrapp {
     margin: 0 10px;
     height: 150px;
@@ -218,10 +230,12 @@
   }
 
   .toper-left {
-    margin: 0!important;
+    margin: 0 !important;
     float: left;
   }
-
+  .button-nav {
+    display: none;
+  }
   .text-wrapp p,
   .text-wrapp ul {
     font-size: 1.48em;

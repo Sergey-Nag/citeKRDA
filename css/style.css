@@ -35,7 +35,8 @@ a.link:hover {
 
 .form-input,
 ul.leng-list a,
-ul.leng-list li  {
+.button-nav,
+ul.leng-list li {
   transition: all .18s ease;
   -webkit-transition: all .18s ease;
   -moz-transition: all .18s ease;
@@ -150,11 +151,11 @@ ul.leng-list {
   border-radius: 5px 5px 0 0;
 }
 
-.link-list:last-child .lang-input{
+.link-list:last-child .lang-input {
   border-radius: 0 0 5px 5px;
 }
 
-.link-list:hover .lang-input{
+.link-list:hover .lang-input {
   background-color: #242424;
   color: #fff;
 }
@@ -194,6 +195,7 @@ html[lang="pl"] .main-screen,
 html[lang="pl"] .footer-info-screen {
   background-color: #D4213D;
 }
+
 html[lang="pl"] .main-screen::after,
 html[lang="pl"] .footer-info-screen::after,
 html[lang="pl"] .footer-screen::before,
@@ -206,14 +208,14 @@ html[lang="pl"] .or-sample span {
 
 html[lang="pl"] .info_screen,
 html[lang="pl"] .media-screen,
-html[lang="pl"] .form-input:focus
-{
+html[lang="pl"] .form-input:focus {
   background-color: #ffffff;
-  color: #000000!important;
+  color: #000000 !important;
 }
+
 html[lang="pl"] .wrapp-info h1,
 html[lang="pl"] .right-block .list-colors h2 {
-  color: #000000!important;
+  color: #000000 !important;
 }
 
 
@@ -269,6 +271,7 @@ main {
   z-index: 100;
   height: 1095px;
 }
+
 html[lang="pl"] .toper-left {
   margin-bottom: -550px;
 }
@@ -320,6 +323,7 @@ html[lang="pl"] h1#show430 {
 
 .carousel-wrapp {
   overflow: hidden;
+  position: relative;
   width: 100%;
 }
 
@@ -342,11 +346,36 @@ html[lang="pl"] h1#show430 {
   opacity: 1;
 }
 
-.swiper-button-prev {
-  left: 250px;
+
+.button-nav {
+  cursor: pointer;
+  position: absolute;
+  top: 41%;
+  height: 100px;
+  width: 50px;
+  margin: 0 10px;
+  background: url(../img/arrow-nav.svg) no-repeat center;
+  background-size: cover;
+  z-index: 100;
+  opacity: 0;
 }
 
-.swiper-button-next {}
+.carousel-wrapp:hover .button-nav {
+  opacity: .5;
+}
+
+.carousel-wrapp:hover .button-nav:hover,
+.carousel-wrapp:hover .button-nav:focus,
+.button-nav:focus{
+  opacity: .9;
+}
+.nav-prev {
+  left: 0;
+}
+.nav-next {
+  right: 0;
+  transform: rotate(180deg);
+}
 
 .swiper-slide img {
   width: inherit;
