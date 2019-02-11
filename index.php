@@ -1,27 +1,27 @@
 <?php 
-$sites = array(
-  "pl" => "http://pl.kreyda.pro/",
-  "de" => "http://de.kreyda.pro/",
-  "bg" => "http://bg.kreyda.pro/",
-  "cs" => "http://cs.kreyda.pro/",
-  "be" => "http://be.kreyda.pro/",
-  "ro" => "http://ro.kreyda.pro/",
-  "en" => "http://kreyda.pro/"
-);
-
-$lang = $_COOKIE["lang"];
-foreach($_SERVER as $key => $dat) {
-  echo $key." => ".$dat."<br>";
-}
-if (empty($lang)) {
-
-  $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);  
-  
-  if (!in_array($lang, array_keys($sites))) {
-    $lang = 'en';
-  }
-  setcookie ("lang", $lang, time()+30*24*60*60, "/", $_SERVER['HTTP_HOST']);
-}
+//$sites = array(
+//  "pl" => "http://pl.kreyda.pro/",
+//  "de" => "http://de.kreyda.pro/",
+//  "bg" => "http://bg.kreyda.pro/",
+//  "cs" => "http://cs.kreyda.pro/",
+//  "be" => "http://be.kreyda.pro/",
+//  "ro" => "http://ro.kreyda.pro/",
+//  "en" => "http://kreyda.pro/"
+//);
+//
+//$lang = $_COOKIE["lang"];
+//foreach($_SERVER as $key => $dat) {
+//  echo $key." => ".$dat."<br>";
+//}
+//if (empty($lang)) {
+//
+//  $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);  
+//  
+//  if (!in_array($lang, array_keys($sites))) {
+//    $lang = 'en';
+//  }
+//  setcookie ("lang", $lang, time()+30*24*60*60, "/", $_SERVER['HTTP_HOST']);
+//}
 
 
 //echo header('Location: '.$sites[$lang]);
@@ -40,7 +40,7 @@ if (empty($lang)) {
   <link rel="alternate" hreflang="ro-MD" href="http://ro.kreyda.pro/">
   <link rel="alternate" hreflang="en" href="http://kreyda.pro/">
   <link rel="alternate" hreflang="x-default" href="http://kreyda.pro/">
-  
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,6 +60,20 @@ if (empty($lang)) {
 </head>
 
 <body>
+  <!--[if (gt IE 9)|!(IE)]><!-->
+  <style>
+    .main-logo {
+      max-height: auto;
+      width: auto;
+      height: 50vh;
+    }
+    @media (max-width: 600px) {
+      .main-logo {
+        width: 40vw;
+      }
+    }
+  </style>
+  <!--<![endif]-->
   <header class="main-screen d-flex screen">
     <div class="m-center">
       <div class="logo"><img class="main-logo m-center" src="img/LOGO-en.svg" alt="kreyda logo"></div>
@@ -160,7 +174,7 @@ if (empty($lang)) {
     </div>
     <div class="media-screen">
       <div class="container m-center">
-        <div class="wrapp-info">
+        <div class="wrapp-info def-w">
           <h1>Photos:</h1>
         </div>
       </div>
@@ -186,13 +200,17 @@ if (empty($lang)) {
         <div class="button-nav nav-next"></div>
       </div>
 
+
+
+
+    </div>
+    <div class="video_wrapper">
       <div class="container m-center">
-        <div class="wrapp-info">
+        <div class="wrapp-info def-b">
           <h1>Videos:</h1>
         </div>
       </div>
-
-      <div class="video-wrapp">
+      <div class="video-wrapp p_b">
         <div class="videos d-flex">
           <div class="vid-wrapp">
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dtsxQOdfyIY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -203,6 +221,29 @@ if (empty($lang)) {
         </div>
       </div>
     </div>
+
+    <div class="certif-wrapp">
+      <div class="container m-center">
+        <div class="wrapp-info def-w">
+          <h1>Certificates:</h1>
+          <div class="certs-imgs d-flex">
+            <div class="img-cert-wrapp">
+              <a href="/img/ISO-eng.jpg" target="_blank">
+                <img src="/img/ISO-eng-s.jpg" alt="ISO-eng">
+                <span class="cert-lang">en</span>
+              </a>
+            </div>
+            <div class="img-cert-wrapp">
+              <a href="/img/ISO-uk.jpg" target="_blank">
+                <img src="/img/ISO-uk-s.jpg" alt="ISO-uk">
+                <span class="cert-lang">ru</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <footer class="footer-screen">

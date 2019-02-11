@@ -173,6 +173,10 @@
     margin: 0 10px;
     height: 150px;
   }
+  .wrapp-info.def-w,
+  .wrapp-info.def-b {
+    padding-bottom: 0px;
+  }
 }
 
 @media all and (max-width: 501px) {
